@@ -56,7 +56,7 @@ class DyncssService
     
     protected static function isCliRequest()
     {
-        if (\version_compare(TYPO3_version, '8.0.0', '>=')) {
+        if (\version_compare(TYPO3_version, '8.0.0', '>=') || \version_compare(phpversion(), '7.2.0', '>=')) {
             return (TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_CLI);
         }
         return TYPO3_cliMode;
